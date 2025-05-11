@@ -73,6 +73,83 @@ If everything was good, John will approve for pull request
 
 Anyone(John or me) who hass access can merge this into main branch
 
+After merging we can delete the branch.
+
+```
+git checkout main
+```
+
+```
+git pull
+```
+
+Before running 2 commands
+
+![image](https://github.com/user-attachments/assets/a9249ca8-2c94-4f85-a421-da4451672409)
+
+After running above 2 commands
+
+![image](https://github.com/user-attachments/assets/0d43531a-9dbe-43ae-b755-bcf8f94ef825)
+
+2 parents for merge commit
+
+![image](https://github.com/user-attachments/assets/76cd79c0-b454-4594-9e28-02980966b0f6)
+
+
+💡 What is a Parent Commit?
+
+A parent commit is the commit that came just before the current one.
+
+🔀 What Happens When You Merge?
+
+When your branch is merged into main, Git creates a merge commit
+
+This merge commit joins:
+
+The last commit on main before the merge
+
+The last commit on your feature branch
+
+So, the merge commit has 2 parents:
+
+One from main branch
+
+One from feature-xyz branch
+
+🔍 Visual Example:
+
+Before merge:
+
+main:       A → B
+                  \
+feature-xyz:       C → D
+
+After merge:
+
+main:       A → B ───────────┐
+                             ↓
+                       Merge Commit (E)
+feature-xyz:       C → D ────┘
+
+Merge Commit E has two parents:
+
+Parent 1: Commit B from main
+
+Parent 2: Commit D from feature-xyz
+
+🤔 Why Two Parents?
+
+Because it "remembers":
+
+Where the code came from (main)
+
+What was added (feature-xyz)
+
+This helps Git handle the history and possible future merges correctly.
+
+
+
+
 
 
 
